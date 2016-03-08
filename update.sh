@@ -20,7 +20,7 @@ main() {
         if [[ $(dirty) ]]; then 
             echo "Unsaved changes,doing commit so."
             git add .
-            git commit -m "auto commit"
+            git commit -m "auto commit" || repo_failed $1
         fi
 
         local LOCAL=$(git rev-parse @)
@@ -31,12 +31,13 @@ main() {
             echo "Up-to-date"
         elif [[ $LOCAL = $BASE ]]; then
             echo "Need to pull"
-            git pull --rebase
+            git pull --rebase || repo_failed "pull failed for $1"
         elif [[ $REMOTE = $BASE ]]; then
             echo "Need to push"
-            git push || repo_failed $1
+            git push || repo_failed "push failed for $1"
         else
             echo "Diverged notify user"
+            repo_failed "repo $1 needs manual merge/rebase..."
         fi
     }
 
