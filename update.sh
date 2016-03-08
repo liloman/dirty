@@ -47,6 +47,7 @@ main() {
         echo "Doing $dir"
         cd $dir && update_repo
         cd $ROOT
+        echo "**********************************"
     done
 
 }
