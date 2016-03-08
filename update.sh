@@ -47,7 +47,6 @@ main() {
         [[ ! -d $dir ]] && die "$dir not found" && continue
         cd $dir && update_repo
         cd $ROOT
-        echo "************END********************"
     done
 
 }
