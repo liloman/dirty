@@ -24,12 +24,11 @@ main() {
         fi
 
         #update refs for remote
-        git remote -v update || repo_failed " update for remote on repo $1" && return 
+        git remote -v update || { repo_failed " update for remote on repo $1"; return; }
         local LOCAL=$(git rev-parse @)
         local REMOTE=$(git rev-parse @{u})
         local BASE=$(git merge-base @ @{u})
 
-        echo ein1?
         if [[ $LOCAL = $REMOTE ]]; then
             echo "Up-to-date"
         elif [[ $LOCAL = $BASE ]]; then
@@ -42,7 +41,6 @@ main() {
             echo "Diverged notify user"
             repo_failed "repo $1 needs manual merge/rebase..."
         fi
-        echo ein?
     }
 
 
