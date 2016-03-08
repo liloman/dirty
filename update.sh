@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-    #function_body
-    #Check if local changes
+    #Check for local changes
     dirty() { git status --porcelain; }
 
     if [[ $(dirty) ]]; then 
@@ -13,9 +12,9 @@ main() {
         echo "clean"
     fi
 
-    LOCAL=$(git rev-parse @)
-    REMOTE=$(git rev-parse @{u})
-    BASE=$(git merge-base @ @{u})
+    local LOCAL=$(git rev-parse @)
+    local REMOTE=$(git rev-parse @{u})
+    local BASE=$(git merge-base @ @{u})
 
     if [[ $LOCAL = $REMOTE ]]; then
         echo "Up-to-date"
