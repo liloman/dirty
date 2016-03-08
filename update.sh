@@ -5,7 +5,7 @@
 readonly ROOT=~/Clones
 
 #Repos
-readonly repos="dirty dirStack checkUndocumented generate-autocompletion"
+readonly mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks rmalias"
 
 #Change dir to $root
 cd $ROOT
@@ -41,7 +41,7 @@ main() {
     }
 
 
-    for dir in $repos; do
+    for dir in $mines; do
         echo "**********************************"
         echo "Doing $dir"
         [[ ! -d $dir ]] && repo_failed "$dir not found" && continue
