@@ -29,6 +29,7 @@ main() {
         local REMOTE=$(git rev-parse @{u})
         local BASE=$(git merge-base @ @{u})
 
+        echo ein1?
         if [[ $LOCAL = $REMOTE ]]; then
             echo "Up-to-date"
         elif [[ $LOCAL = $BASE ]]; then
@@ -41,6 +42,7 @@ main() {
             echo "Diverged notify user"
             repo_failed "repo $1 needs manual merge/rebase..."
         fi
+        echo ein?
     }
 
 
