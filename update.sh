@@ -34,7 +34,7 @@ main() {
             git pull --rebase
         elif [[ $REMOTE = $BASE ]]; then
             echo "Need to push"
-            git push
+            git push || repo_failed $1
         else
             echo "Diverged notify user"
         fi
@@ -45,7 +45,7 @@ main() {
         echo "**********************************"
         echo "Doing $dir"
         [[ ! -d $dir ]] && repo_failed "$dir not found" && continue
-        cd $dir && update_repo
+        cd $dir && update_repo $dir
         cd $ROOT
     done
 
