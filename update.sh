@@ -42,7 +42,7 @@ main() {
 
 
     for dir in $repos; do
-        [[ ! -e $dir ]] && die "$dir not found" && continue
+        [[ ! -d $dir ]] && die "$dir not found" && continue
         echo "**********************************"
         echo "Doing $dir"
         cd $dir && update_repo
