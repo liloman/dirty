@@ -5,13 +5,13 @@
 readonly ROOT=~/Clones
 
 #Repos
-readonly repos="dirty dirStack checkUndocumenteds"
+readonly repos="dirty dirStack checkUndocumented"
 
 #Change dir to $root
 cd $ROOT
 
 main() {
-    die() { notify_err "$1"; }
+    repo_failed() { notify_err "$1"; }
 
     update_repo() {
         #Check for local changes
@@ -44,7 +44,7 @@ main() {
     for dir in $repos; do
         echo "**********************************"
         echo "Doing $dir"
-        [[ ! -d $dir ]] && die "$dir not found" && continue
+        [[ ! -d $dir ]] && repo_failed "$dir not found" && continue
         cd $dir && update_repo
         cd $ROOT
     done
