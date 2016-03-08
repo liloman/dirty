@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
+# Sync local repos 
+readonly ROOT=~/Clones
 
-main() {
+#Repos
+readonly repos="dirty "
+
+#Change dir to $root
+cd $ROOT
+
+update_repo() {
     #Check for local changes
     dirty() { git status --porcelain; }
 
@@ -27,8 +35,12 @@ main() {
     else
         echo "Diverged notify user"
     fi
-
 }
 
-main
+
+for dir in $repos; do
+    echo "Doing $dir"
+    cd $dir && update_repo
+    cd $ROOT
+done
 
