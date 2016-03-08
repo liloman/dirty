@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
+#Include libnotify
 . ~/Scripts/libnotify
-# Sync local repos 
-readonly ROOT=~/Clones
 
-#Repos
-mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks rmalias "
-mines+=" easyPcRecovery"
+# Sync local repos dir 
+readonly ROOT=~/Clones
 
 #Change dir to $root
 cd $ROOT
@@ -20,7 +18,7 @@ update_repo() {
     if [[ $(dirty) ]]; then 
         echo "Unsaved changes,doing commit so."
         git add .
-        git commit -m "auto commit" || repo_failed $1
+        git commit -m "auto commit for unsaved changes" || repo_failed $1
     fi
 
     #update refs for remote
@@ -45,6 +43,9 @@ update_repo() {
 
 
 do_mines() {
+    #Repos
+    local mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks "
+    mines+=" rmalias easyPcRecovery"
     for dir in $mines; do
         echo "**********************************"
         echo "Doing $dir"
@@ -61,9 +62,9 @@ do_dotfiles(){
     cd $ROOT
 }
 
-main() {
+sync_repos() {
     do_mines
     do_dotfiles
 }
 
-main
+sync_repos
