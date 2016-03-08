@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
+
+. ~/Scripts/libnotify
 # Sync local repos 
 readonly ROOT=~/Clones
 
 #Repos
-readonly repos="dirty dirStack checkUndocumented"
+readonly repos="dirty dirStack checkUndocumenteds"
 
 #Change dir to $root
 cd $ROOT
 
 main() {
+    die() { notify-err "$1"; }
+
     update_repo() {
         #Check for local changes
         dirty() { git status --porcelain; }
@@ -38,7 +42,7 @@ main() {
 
 
     for dir in $repos; do
-        [[ ! -e $dir ]] && die "$dir not found"
+        [[ ! -e $dir ]] && die "$dir not found" && continue
         echo "**********************************"
         echo "Doing $dir"
         cd $dir && update_repo
