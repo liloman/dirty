@@ -5,7 +5,7 @@
 readonly ROOT=~/Clones
 
 #Repos
-readonly repos="dirty dirStack checkUndocumenteds"
+readonly repos="dirty dirStack checkUndocumented generate-autocompletion"
 
 #Change dir to $root
 cd $ROOT
