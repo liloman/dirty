@@ -11,7 +11,7 @@ readonly repos="dirty dirStack checkUndocumenteds"
 cd $ROOT
 
 main() {
-    die() { notify-err "$1"; }
+    die() { notify_err "$1"; }
 
     update_repo() {
         #Check for local changes
