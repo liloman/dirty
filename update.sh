@@ -5,7 +5,9 @@
 readonly ROOT=~/Clones
 
 #Repos
-readonly mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks rmalias"
+mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks rmalias "
+mines+=" easyPcRecovery"
+
 
 #Change dir to $root
 cd $ROOT
