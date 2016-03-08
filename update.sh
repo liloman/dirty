@@ -24,7 +24,7 @@ main() {
         fi
 
         #update refs for remote
-        git remote update|| repo_failed " update for remote on repo $1"
+        git remote -v update || repo_failed " update for remote on repo $1" && return 
         local LOCAL=$(git rev-parse @)
         local REMOTE=$(git rev-parse @{u})
         local BASE=$(git merge-base @ @{u})
@@ -32,10 +32,10 @@ main() {
         if [[ $LOCAL = $REMOTE ]]; then
             echo "Up-to-date"
         elif [[ $LOCAL = $BASE ]]; then
-            echo "Need to pull"
+            echo "Needs to pull"
             git pull --rebase || repo_failed "pull failed for $1"
         elif [[ $REMOTE = $BASE ]]; then
-            echo "Need to push"
+            echo "Needs to push"
             git push || repo_failed "push failed for $1"
         else
             echo "Diverged notify user"
