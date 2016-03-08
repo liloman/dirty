@@ -34,7 +34,7 @@ main() {
         elif [[ $LOCAL = $BASE ]]; then
             echo "Needs to pull"
             git pull --rebase || repo_failed "pull failed for $1"
-        elif [[ $REMOTE = $BASE ]]; then
+        elif [[ $LOCAL = $REMOTE ]]; then
             echo "Needs to push"
             git push || repo_failed "push failed for $1"
         else
