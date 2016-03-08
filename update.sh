@@ -23,6 +23,8 @@ main() {
             git commit -m "auto commit" || repo_failed $1
         fi
 
+        #update refs for remote
+        git remote update|| repo_failed " update for remote on repo $1"
         local LOCAL=$(git rev-parse @)
         local REMOTE=$(git rev-parse @{u})
         local BASE=$(git merge-base @ @{u})
