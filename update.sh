@@ -37,6 +37,7 @@ update_repo() {
 
 
 for dir in $repos; do
+    echo "**********************************"
     echo "Doing $dir"
     cd $dir && update_repo
     cd $ROOT
