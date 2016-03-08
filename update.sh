@@ -8,13 +8,12 @@ readonly ROOT=~/Clones
 mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks rmalias "
 mines+=" easyPcRecovery"
 
-
 #Change dir to $root
 cd $ROOT
 
-main() {
-    repo_failed() { notify_err "$1"; }
+repo_failed() { notify_err "$1"; }
 
+do_mines() {
     update_repo() {
         #Check for local changes
         dirty() { git status --porcelain; }
@@ -54,6 +53,11 @@ main() {
         cd $ROOT
     done
 
+}
+
+main() {
+    do_mines
+    cd ~/dotfiles && update_repo dotfiles
 }
 
 main
