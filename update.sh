@@ -13,11 +13,9 @@ update_repo() {
     dirty() { git status --porcelain; }
 
     if [[ $(dirty) ]]; then 
-        echo "unsaved changes"
+        echo "Unsaved changes,doing commit so."
         git add .
         git commit -m "auto commit"
-    else
-        echo "clean"
     fi
 
     local LOCAL=$(git rev-parse @)
