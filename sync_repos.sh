@@ -18,7 +18,7 @@ update_repo() {
     if [[ $(dirty) ]]; then 
         echo "Unsaved changes,doing commit so."
         git add .
-        git commit -m "auto commit for unsaved changes" || repo_failed $1
+        lxterminal -l -e 'git commit ; /bin/bash' || repo_failed $1
     fi
 
     #update refs for remote
@@ -44,8 +44,9 @@ update_repo() {
 
 do_mines() {
     #Repos
-    local mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks "
-    mines+=" rmalias easyPcRecovery"
+    local mines=dirty
+    # local mines="dirty dirStack checkUndocumented generate-autocompletion pomodoroTasks "
+    # mines+=" rmalias easyPcRecovery"
     for dir in $mines; do
         echo "**********************************"
         echo "Doing $dir"
@@ -64,7 +65,7 @@ do_dotfiles(){
 
 sync_repos() {
     do_mines
-    do_dotfiles
+    # do_dotfiles
 }
 
 sync_repos
