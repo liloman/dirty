@@ -1,5 +1,5 @@
 Name:           dirty
-Version:        2.5.2
+Version:        2.5.3
 Release:        1%{?dist}
 Summary:        dirtywarrior - 
 License:        MIT
@@ -22,7 +22,7 @@ mkdir %{_target_platform}
 
 %build
 pushd %{_target_platform}
-  %cmake .. -DTASK_RCDIR=%{_datadir}/%{name}
+#  %cmake .. -DTASK_RCDIR=%{_datadir}/%{name}
 popd
 %make_build -C %{_target_platform}
 
@@ -53,6 +53,9 @@ rm -vrf %{buildroot}%{_datadir}/doc/%{name}/
 %{_datadir}/bash-completion/completions/%{name}
 
 %changelog
+* Mon Jan 16 2017 liloman <eselilo@gmail.com> 2.5.3-1
+- 
+
 * Mon Jan 16 2017 liloman <eselilo@gmail.com> 2.5.2-1
 - caca
 
