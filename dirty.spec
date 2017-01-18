@@ -29,8 +29,11 @@ exit 0
 cd %{_sourcedir}/%{name}*
 mkdir -p %{buildroot}/tmp
 cp -a * %{buildroot}/tmp
+
+
+#tito nonsense?
 cd %{_sourcedir}
-mv %{name}-%{version}.tar.gz	%{tgz} 
+cp %{name}-%{version}.tar.gz	%{tgz} 
 
 
 %files
