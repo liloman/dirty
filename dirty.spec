@@ -20,10 +20,11 @@ so it will do n000thing
 
 %prep
 %if "%{release}" == "1.git*"
-echo "test"
+echo "test %{release}"
 %else
-echo "release"
+echo "release %{release}"
 %endif
+false
 
 
 %build
