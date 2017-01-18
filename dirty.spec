@@ -33,7 +33,7 @@ cp -a * %{buildroot}/tmp
 
 #tito nonsense?
 cd %{_sourcedir}
-cp %{name}-%{version}.tar.gz	%{tgz} 
+cp /tmp/tito/%{name}-%{version}.tar.gz	%{tgz} 
 
 
 %files
