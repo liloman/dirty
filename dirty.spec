@@ -25,7 +25,8 @@ so it will do n000thing
 exit 0
 
 %install
-cd %{name}-%{version}-%{release}/
+#cd %{name}-%{version}-%{release}/
+cd %{name}-%{release}/
 mkdir -p %{buildroot}/tmp
 
 cp -av * %{buildroot}/tmp
