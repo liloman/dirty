@@ -16,11 +16,13 @@ BuildRequires:	wget
 so it will do n000thing
 
 %prep
+if %{release} != 1.git*
 #download it to sourcedir
 wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
 tar -zxvf %{_sourcedir}/%{tgz} 
-false
-
+%else
+echo "hola"
+%endif
 
 %build
 exit 0
