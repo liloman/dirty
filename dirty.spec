@@ -22,6 +22,8 @@ so it will do n000thing
 
 
 %build
+echo "hola"
+false
 exit 0
 
 %install
