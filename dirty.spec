@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.20
+Version:	0.21
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -31,7 +31,7 @@ mkdir -p %{buildroot}/tmp
 cp -a * %{buildroot}/tmp
 
 
-#tito nonsense?
+#tito nonsense for releases??
 #cd %{_sourcedir}
 #cp /tmp/tito/%{name}-%{version}.tar.gz	%{tgz} 
 
