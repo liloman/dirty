@@ -14,6 +14,7 @@ BuildRequires:	wget
 %description
 
 so it will do n000thing
+
 # #download it to sourcedir
 # wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
 # tar -zxvf %{_sourcedir}/%{tgz} 
@@ -25,14 +26,9 @@ so it will do n000thing
 exit 0
 
 %install
-#cd %{name}-%{version}-%{release}/
 cd %{_sourcedir}/%{name}*
-tree .
-false
-cd %{name}-%{release}/
 mkdir -p %{buildroot}/tmp
-
-cp -av * %{buildroot}/tmp
+cp -a * %{buildroot}/tmp
 
 %files
 /tmp/*
