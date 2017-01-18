@@ -19,7 +19,7 @@ so it will do n000thing
 # tar -zxvf %{_sourcedir}/%{tgz} 
 
 %prep
-%if "%{release}" == "1.git*"
+%if "%{release}" == "1.gits*"
 echo "test %{release}"
 %else
 echo "release %{release}"
