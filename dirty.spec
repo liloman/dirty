@@ -17,7 +17,7 @@ so it will do n000thing
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}%/tmp
+install -d -m 755 %{buildroot}/tmp
 cp -a * %{buildroot}/tmp
 
 %files
