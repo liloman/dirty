@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.25
+Version:	0.26
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
