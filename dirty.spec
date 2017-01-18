@@ -25,8 +25,10 @@ tar -zxvf %{_sourcedir}/%{tgz}
 exit 0
 
 %install
+cd %{name}-%{name}-%{version}-1/
 mkdir -p %{buildroot}/tmp
-cp -av %{name}-%{name}-%{version}-1/* %{buildroot}/tmp
+
+cp -av * %{buildroot}/tmp
 
 %files
 /tmp/*
