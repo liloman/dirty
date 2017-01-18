@@ -7,7 +7,7 @@ Summary:	nothing special just a dirty repo
 
 License:	MIT
 URL:	%{repo}/dirty/
-Source0:	%{url}/archive/v%{version}.tar.gz	
+Source0:	%{url}/archive/v%{version}-%{release}.tar.gz	
 
 BuildRequires:	wget
 
@@ -16,7 +16,7 @@ BuildRequires:	wget
 so it will do n000thing
 
 %prep
-wget %{url}/archive/v%{version}.tar.gz	
+wget	%{url}/archive/v%{version}-%{release}.tar.gz	
 tar zxvf v%{version}.tar.gz
 
 
