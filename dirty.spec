@@ -1,13 +1,13 @@
 %define repo https://github.com/liloman
 
 Name:		dirty
-Version:	0.4
+Version:	0.5
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 
 License:	MIT
-URL:	%{repo}/dirty/
-Source0:	%{url}/archive/v%{version}-%{release}.tar.gz	
+URL:	%{repo}/dirty
+Source0:	%{url}/archive/v%{version}.tar.gz	
 
 BuildRequires:	wget
 
@@ -16,7 +16,7 @@ BuildRequires:	wget
 so it will do n000thing
 
 %prep
-wget	%{url}/archive/v%{version}-%{release}.tar.gz	
+wget	%{url}/archive/v%{version}.tar.gz	
 tar zxvf v%{version}.tar.gz
 
 
