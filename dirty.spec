@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.14
+Version:	0.15
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -18,7 +18,7 @@ so it will do n000thing
 %prep
 #download it to sourcedir
 wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
-%setup -n 
+%setup 
 
 
 %build
