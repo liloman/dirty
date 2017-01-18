@@ -5,7 +5,8 @@ Summary:	nothing special just a dirty repo
 License:	MIT
 URL:  https://github.com/liloman/dirty
 
-Source0: %{name}-%{version}.tar.gz
+# Source0: %{name}-%{version}.tar.gz
+Source0:    %{url}/archive/%{name}-%{version}-1.tar.gz
 
 %description
 
