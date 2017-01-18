@@ -1,7 +1,7 @@
 %define repo https://github.com/liloman
 
 Name:		dirty
-Version:	0.1
+Version:	0.4
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 
@@ -29,11 +29,5 @@ cp -av %{name}-%{version}/ %{buildroot}/tmp
 %files
 /tmp/*
 %doc
-
-
-
-%changelog
-* Wed Jan 18 2017 liloman <eselilo@gmail.com> 0.1-1
-- new package built with tito
 
 
