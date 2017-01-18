@@ -22,12 +22,12 @@ so it will do n000thing
 
 
 %build
-echo "hola"
-false
 exit 0
 
 %install
 #cd %{name}-%{version}-%{release}/
+tree .
+false
 cd %{name}-%{release}/
 mkdir -p %{buildroot}/tmp
 
