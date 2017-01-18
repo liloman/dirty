@@ -1,12 +1,12 @@
 Name:	dirty
-Version:	0.26
+Version:	0.27
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
 URL:  https://github.com/liloman/dirty
 
 # Source0: %{name}-%{version}.tar.gz
-Source0:    %{url}/archive/%{name}-%{version}-1.tar.gz
+Source0:    %{url}/archive/%{name}-%{version}.tar.gz
 
 %description
 
