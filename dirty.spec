@@ -19,19 +19,13 @@ so it will do n000thing
 # tar -zxvf %{_sourcedir}/%{tgz} 
 
 %prep
-%if "%{release}" == "1.git"*
-echo "test %{release}"
-%else
-echo "release %{release}"
-%endif
-false
 
 
 %build
 exit 0
 
 %install
-cd %{name}-%{name}-%{version}-1/
+cd %{name}-%{version}-%{release}/
 mkdir -p %{buildroot}/tmp
 
 cp -av * %{buildroot}/tmp
