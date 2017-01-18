@@ -26,6 +26,7 @@ exit 0
 
 %install
 #cd %{name}-%{version}-%{release}/
+cd %{_sourcedir}/
 tree .
 false
 cd %{name}-%{release}/
