@@ -19,6 +19,7 @@ so it will do n000thing
 #download it to sourcedir
 wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
 tar -zxvf %{_sourcedir}/%{tgz} 
+false
 
 
 %build
