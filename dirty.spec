@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.17
+Version:	0.18
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -26,7 +26,7 @@ exit 0
 
 %install
 mkdir -p %{buildroot}/tmp
-cp -av %{name}-%{name}-%{version}-1/ %{buildroot}/tmp
+cp -av %{name}-%{name}-%{version}-1/* %{buildroot}/tmp
 
 %files
 /tmp/*
