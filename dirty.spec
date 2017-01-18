@@ -14,15 +14,17 @@ BuildRequires:	wget
 %description
 
 so it will do n000thing
+# #download it to sourcedir
+# wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
+# tar -zxvf %{_sourcedir}/%{tgz} 
 
 %prep
-if %{release} != 1.git*
-#download it to sourcedir
-wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
-tar -zxvf %{_sourcedir}/%{tgz} 
+%if "%{release}" == "1.git*"
+echo "test"
 %else
-echo "hola"
+echo "release"
 %endif
+
 
 %build
 exit 0
