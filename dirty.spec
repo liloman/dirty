@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.11
+Version:	0.12
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -21,6 +21,7 @@ tar zxvf %{tgz}
 
 
 %build
+exit 0
 
 %install
 mkdir -p %{buildroot}/tmp
