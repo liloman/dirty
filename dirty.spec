@@ -31,9 +31,9 @@ mkdir -p %{buildroot}/tmp
 cp -a * %{buildroot}/tmp
 
 
-#tito nonsense for releases??
-#cd %{_sourcedir}
-#cp /tmp/tito/%{name}-%{version}.tar.gz	%{tgz} 
+#why only for releases with tito??
+cd %{_sourcedir}
+cp /tmp/tito/%{name}-%{version}.tar.gz	%{tgz} 
 
 
 %files
