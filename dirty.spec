@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.12
+Version:	0.13
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -18,6 +18,7 @@ so it will do n000thing
 %prep
 wget	%{url}/archive/%{tgz}
 tar zxvf %{tgz}
+mv %{tgz} %{_sourcedir}/
 
 
 %build
