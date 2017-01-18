@@ -1,5 +1,5 @@
 Name:	dirty
-Version:	0.19
+Version:	0.20
 Release:	1%{?dist}
 Summary:	nothing special just a dirty repo
 License:	MIT
@@ -19,7 +19,7 @@ so it will do n000thing
 # wget	%{url}/archive/%{tgz} -P %{_sourcedir}/
 # tar -zxvf %{_sourcedir}/%{tgz} 
 
-%prep
+# %prep
 
 
 %build
@@ -29,6 +29,9 @@ exit 0
 cd %{_sourcedir}/%{name}*
 mkdir -p %{buildroot}/tmp
 cp -a * %{buildroot}/tmp
+cd %{_sourcedir}
+mv %{name}-%{version}.tar.gz	%{tgz} 
+
 
 %files
 /tmp/*
